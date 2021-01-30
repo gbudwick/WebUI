@@ -1,0 +1,26 @@
+﻿<div id="topbar">
+    <section id="page-title">
+        <h4>@ViewBag.Title</h4>
+    </section>
+</div>
+
+<div id="form-area">
+    <form id="form" autocomplete="off">
+        @{
+            await Html.RenderPartialAsync("NameInformation");}
+        <hr class="u-full-width" />
+        @{
+            await Html.RenderPartialAsync("IdentificationInformation");}
+        <hr class="u-full-width" />
+        @{
+            await Html.RenderPartialAsync("PhysicalAddress");}
+        <hr class="u-full-width" />
+
+        <div class="action-row">
+            <div class="row">
+                <input class="button button-primary u-pull-right" type="submit" value="Save">
+                <input class="button u-pull-right" type="button" value="Cancel">
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+﻿@using DoveLink.Applications.Member.Models;
+@using Microsoft.AspNetCore.Http;
+@using DoveLink.Applications.Extensions;
+
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var applicationType = ApplicationType.Member;
+    if (@HttpContextAccessor.HttpContext.Session.GetString("ApplicationType") != null)
+    {
+        var appType = @HttpContextAccessor.HttpContext.Session.GetString("ApplicationType");
+        applicationType = (ApplicationType)Enum.Parse(typeof(ApplicationType), appType, true);
+    }
+
+    switch (applicationType)
+    {
+        case ApplicationType.Member:
+            Layout = "~/Views/Shared/_MembershipLayout.cshtml";
+            break;
+        default:
+            Layout = "~/Views/Shared/_HomeEquityLayout.cshtml";
+            break;
+    }
+
+    if (Html.CurrentController() == "LandingPage")
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}

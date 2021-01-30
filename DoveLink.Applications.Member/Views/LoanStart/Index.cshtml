@@ -1,0 +1,30 @@
+﻿@{
+    var loanAppTypes = new Dictionary<string, string>
+{
+        { "HomeEquity", "Home Equity Loan" },
+        { "Auto", "Auto Loan" },
+        { "Personal", "Personal Loan" },
+    };
+
+    var loanTypeDescriptions = new Dictionary<string, string>
+{
+        { "HomeEquity", "Description of starting a new application for a Home Equity Loan." },
+        { "Auto", "Description of starting a new application for an Auto Loan" },
+        { "Personal", "Description of starting a new application for a Personal Loan" },
+    };
+}
+
+<div style="margin-top: 20px;">
+    <h5>Loan Application Type</h5>
+    <div class="row">
+        <div class="text-center">
+            @foreach (var loanType in loanAppTypes)
+            {
+                <p style="margin-top:25px">
+                    @loanTypeDescriptions[loanType.Key]
+                </p>
+                <a class="button button-primary" href="/LoanStart/NewLoan/@loanType.Key">@loanType.Value</a>
+            }
+        </div>
+    </div>
+</div>

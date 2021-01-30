@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="~/Content/normalize.css" />
+    <link rel="stylesheet" href="~/Content/_variables.css" />
+    <link rel="stylesheet" href="~/Content/skeleton.css" />
+    <link rel="stylesheet" href="~/Content/app.css" />
+    <link rel="stylesheet" href="~/Content/sidebar.css" />
+
+    <script src="~/Scripts/lib/modernizr-2.8.3.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="~/Content/iconic/font/css/open-iconic.css" />
+</head>
+<body>
+    <div id="main" class="container">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/lib/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/lib/jquery.inputmask.js"></script>
+    <script src="~/Scripts/lib/day.js"></script>
+    <script src="~/Scripts/lib/app.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
