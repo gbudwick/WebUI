@@ -259,3 +259,13 @@ function populateStatesDropdown() {
     $("select[name='state']").append("<option value='"+state.abbreviation+"'>"+state.name+"</option>");
   }
 }
+
+function showHideEye(e, inputId) {
+    if (e && e.className.includes("fa-eye-slash")) {
+        e.className = "fa fa-eye";
+        document.getElementById(inputId).setAttribute('type', 'text');
+    } else {
+        e.className = "fa fa-eye-slash";
+        document.getElementById(inputId).setAttribute('type', 'password');
+    }
+}

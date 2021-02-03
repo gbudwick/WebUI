@@ -73,7 +73,22 @@ hr.light {
 
 .exit {
     width: 100%;
-    position:absolute;
+    position: absolute;
     left: 0;
     bottom: 0;
 }
+
+.show-hide-eye {
+    display: block;
+    height: 20px;
+    padding-top: 10px;
+    font: 22px sans-serif;
+    position: relative;
+}
+
+    .show-hide-eye i.fa {
+        position: absolute;
+        right: 20px;
+        bottom: 53px;
+        cursor: pointer;
+    }
