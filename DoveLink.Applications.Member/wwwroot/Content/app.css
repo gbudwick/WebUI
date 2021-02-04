@@ -6,8 +6,10 @@
 #main {
     position: relative;
     top: 0px;
-    margin-left: 400px;
     padding-left: 25px;
+}
+.sidebar-container ~ #main {
+    margin-left: 400px;
 }
 
 #topbar {
@@ -54,23 +56,37 @@ hr.light {
 .action-row {
     bottom: 0;
     position: fixed;
-    width: 100%;
-    margin-left: -125px;
+    width: calc(100% - 300px);
     padding-top: 20px;
     background-color: white;
-    box-shadow: 0 -6px 5px gray;
+    box-shadow: 0 -6px 5px grey;
+    left: 300px;
 }
 
-    .action-row .row {
-        width: 960px;
-        padding-left: 100px;
-    }
+.action-row .row {
+    max-width: 960px;
+    margin: auto;
+    padding-left: 100px;
+}
 
 .button.u-pull-right {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+.topbar-inner {
+    display: flex;
+    align-items: center;
+}
+.topbar-inner .navigation-btn {
+    padding: 0;
+    margin-right: 15px;
+    border: none;
+    margin-bottom: 0;
+}
+.topbar-inner .navigation-btn svg {
+    width: 40px;
+    height: 40px;
+}
 .exit {
     width: 100%;
     position: absolute;
@@ -86,9 +102,41 @@ hr.light {
     position: relative;
 }
 
-    .show-hide-eye i.fa {
-        position: absolute;
-        right: 20px;
-        bottom: 53px;
-        cursor: pointer;
+.show-hide-eye i.fa {
+    position: absolute;
+    right: 20px;
+    bottom: 53px;
+    cursor: pointer;
+}
+@media (max-width: 1199px) {
+    #topbar {
+        left: 0;
     }
+
+    .action-row {
+        left: 0;
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    .topbar-inner h4 {
+        font-size: 22px;
+    }
+    .topbar-inner .navigation-btn {
+        margin-right: 10px;
+    }
+    #page-title {
+        margin-left: 15px;
+    }
+}
+@media (max-width: 360px) {
+    
+
+    .topbar-inner h4 {
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .action-row .row {
+        padding-left: 0px;
+    }
+}

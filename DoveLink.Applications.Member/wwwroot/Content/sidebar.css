@@ -6,41 +6,123 @@
     left: 0px;
     width: 300px;
     max-width: 300px;
-    margin-right: 50px;
     height: 100%;
     max-height: 100%;
+    z-index: 5;
 }
 
-.sidebar-container .account-information {
-    padding-left: 50px;
-}
+    .sidebar-container .account-information {
+        padding-left: 50px;
+    }
 
 #sidebar ul {
     left: 0px;
     list-style: none;
 }
 
-#sidebar ul li {
-    padding: 12px 35px 12px 15px;
+    #sidebar ul li {
+        padding: 12px 35px 12px 15px;
+        margin-bottom: 0px;
+    }
+
+        #sidebar ul li a {
+            color: var(--menu-text) !important;
+            text-decoration: none;
+            padding-left: 10px;
+        }
+
+        #sidebar ul li:first-of-type {
+            border-top: 1px solid silver;
+        }
+
+    #sidebar ul li {
+        border-bottom: 1px solid silver;
+    }
+
+        #sidebar ul li.active {
+            color: var(--menu-text) !important;
+            font-weight: bold;
+            font-style: italic;
+            margin-left: -15px;
+        }
+
+.close-sidebar .sidebar-container {
+    left: -300px;
+}
+
+    .close-sidebar .sidebar-container ~ #main {
+        margin-left: auto;
+    }
+
+.close-sidebar #topbar {
+    left: 0;
+}
+
+.close-sidebar .action-row {
+    left: 0;
+    width: 100%;
+}
+
+.topbar-inner h4 {
     margin-bottom: 0px;
 }
 
-#sidebar ul li a {
-    color: var(--menu-text) !important;
-    text-decoration: none;
-    padding-left: 10px;
+@media (max-width: 1400px) {
+    .sidebar-container ~ #main {
+        margin-left: 350px;
+    }
 }
 
-#sidebar ul li:first-of-type {
-    border-top: 1px solid silver;
-}
-#sidebar ul li {
-    border-bottom: 1px solid silver;
+@media (max-width: 1199px) {
+    .sidebar-container {
+        left: -300px;
+    }
+
+        .sidebar-container ~ #main {
+            margin-left: auto;
+        }
+
+    .close-sidebar {
+        overflow: hidden;
+    }
+
+        .close-sidebar .sidebar-container {
+            left: 0;
+        }
+
+            .close-sidebar .sidebar-container ~ #main {
+                margin-left: 300px;
+            }
+
+        .close-sidebar #topbar {
+            left: 300px;
+        }
+
+        .close-sidebar .action-row {
+            left: 300px;
+            width: calc(100% - 300px);
+        }
 }
 
-#sidebar ul li.active {
-    color: var(--menu-text) !important;
-    font-weight: bold;
-    font-style: italic;
-    margin-left: -15px;
+@media (max-width: 360px) {
+    .sidebar-container {
+        width: 260px;
+    }
+
+        .sidebar-container .account-information {
+            padding-left: 25px;
+        }
+
+    .close-sidebar #topbar {
+        left: 260px;
+    }
+
+    .close-sidebar .sidebar-container ~ #main {
+        margin-left: 260px;
+    }
+
+    .close-sidebar .action-row {
+        left: 260px;
+        width: calc(100% - 260px);
+    }
 }
