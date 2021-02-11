@@ -1,21 +1,24 @@
+using DoveLink.Applications.Member.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DoveLink.Applications.Member
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +29,8 @@ namespace DoveLink.Applications.Member
             services.AddHttpContextAccessor();
             services.AddSession(s => s.IdleTimeout = TimeSpan.FromMinutes(30));
             services.AddControllersWithViews();
+
+            services.AddDbContext<JPEFCUDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("JPEFCUConnection")));
             services.AddMvc();
         }
 
