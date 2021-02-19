@@ -58,7 +58,7 @@ namespace DoveLink.Applications.Member
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=LandingPage}/{action=Index}");
+                    pattern: "{controller=LandingPage}/{action=Index_New}");
             });
         }
     }

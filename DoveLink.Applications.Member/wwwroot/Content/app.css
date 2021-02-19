@@ -2,14 +2,22 @@
     height: 100%;
 }
 
-
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:after, :before {
+    box-sizing: border-box;
+}
 #main {
     position: relative;
     top: 0px;
-    padding-left: 25px;
+    
 }
 .sidebar-container ~ #main {
     margin-left: 400px;
+    padding-left: 25px;
 }
 
 #topbar {
@@ -53,7 +61,19 @@ hr.light {
 .text-bold {
     font-weight: bold;
 }
-
+.cs__btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+}
+.cs__btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.cs__btn-primary:hover {
+    color: white;
+    opacity: 0.8;
+}
 .action-row {
     bottom: 0;
     position: fixed;
@@ -109,6 +129,134 @@ hr.light {
     bottom: 53px;
     cursor: pointer;
 }
+
+/*Programme Page CSS Start*/
+.programme-content {
+    max-width: 550px;
+    margin: auto;
+    padding: 50px 0;
+}
+.programme-content__head {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-left: 40px;
+}
+.programme-content__head .title {
+    margin-bottom: 10px;
+    color: #000;
+}
+.programme-content__head .subtitle {
+    font-size: 21px;
+    margin-bottom: 0;
+    color: var(--dark-gray);
+}
+.acc {
+    margin: 0 auto;
+    max-width: 800px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.acc__card {
+    margin-bottom: 12px;
+    position: relative;
+    border: solid 1px var(--gray);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.acc__card:before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 75px;
+    bottom: 0;
+    height: calc(100% + 12px);
+    margin: auto;
+    width: 3px;
+    background-color: var(--light-gray);
+}
+.acc__card.completed:before {
+    background-color: var(--primary-color);
+}
+.acc__card:last-child::before {
+    display: none;
+}
+.acc__title {
+    background: white;
+    color: var(--primary-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1em 1.5em;
+    position: relative;
+    text-align: left;
+    border-radius: 5px 5px;
+}
+.acc__title svg {
+    width: 20px;
+    margin-right: 10px;
+    fill: var(--primary-dark);
+}
+.acc__title:before {
+    position: absolute;
+    content: "";
+    left: -42px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: white;
+    border: solid 3px var(--gray);
+}
+
+.acc__title.active:before {
+    border-color: var(--primary-color);
+}
+.acc__title::after {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--primary-dark);
+    border-bottom: 2px solid var(--primary-dark);
+    position: absolute;
+    right: 20px;
+    content: " ";
+    top: calc(50% - 4px);
+    transform: rotate(-45deg);
+    transition: all 0.2s ease-in-out;
+}
+
+.acc__title.active::after {
+    transform: rotate(45deg);
+    transition: all 0.2s ease-in-out;
+}
+.acc__card.completed .acc__title:before {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+.acc__panel {
+    background: white;
+    color: black;
+    display: none;
+    margin: 0;
+    padding: 15px 20px 20px;
+    text-align: left;
+    border-top: solid 1px var(--gray);
+    border-radius: 0 0 5px 5px;
+}
+.acc__panel p {
+    margin-bottom: 16px;
+}
+.acc__panel ul {
+    padding-left: 0px;
+    margin-bottom: 20px;
+    list-style-type: disc;
+}
+.acc__panel ul li {
+    margin-bottom: 0px;
+}
+/*Programme Page CSS End*/
+
 @media (max-width: 1199px) {
     #topbar {
         left: 0;
@@ -128,6 +276,15 @@ hr.light {
     }
     #page-title {
         margin-left: 15px;
+    }
+    .programme-content__head .title {
+        font-size: 26px;
+    }
+    .programme-content__head .subtitle {
+        font-size: 16px
+    }
+    .programme-content__head {
+        padding-left: 0px;
     }
 }
 @media (max-width: 360px) {

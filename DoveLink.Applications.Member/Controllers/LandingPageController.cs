@@ -8,5 +8,10 @@ namespace DoveLink.Applications.Member.Controllers
         {
             return View();
         }
+
+        public IActionResult Index_New()
+        {
+            return View();
+        }
     }
 }

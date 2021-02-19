@@ -8,6 +8,29 @@ $(document).ready(function () {
     $(document).on("click", ".navigation-btn", function () {
         $('body').toggleClass('close-sidebar');
     });
+
+    // Custom Accordion
+
+    $(".acc__title").click(function (j) {
+        var dropDown = $(this).closest(".acc__card").find(".acc__panel");
+        $(this).closest(".acc").find(".acc__panel").not(dropDown).slideUp();
+
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+        } else {
+            $(this).closest(".acc").find(".acc__title.active").removeClass("active");
+            $(this).addClass("active");
+        }
+
+        dropDown.stop(false, true).slideToggle();
+        j.preventDefault();
+    });
+    $(".acc__btn").click(function (j) {
+        $(".acc__panel").slideUp();
+        $(this).parents('.acc__card').next('.acc__card').find(".acc__panel").slideToggle();
+        $(this).closest(".acc__card").addClass("completed");
+
+    });
 });
 
 
