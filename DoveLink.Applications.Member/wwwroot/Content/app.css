@@ -1,4 +1,5 @@
-﻿html, body {
+﻿
+html, body {
     height: 100%;
 }
 
@@ -7,14 +8,16 @@
     padding: 0;
     margin: 0;
 }
+
 :after, :before {
     box-sizing: border-box;
 }
+
 #main {
     position: relative;
     top: 0px;
-    
 }
+
 .sidebar-container ~ #main {
     margin-left: 400px;
     padding-left: 25px;
@@ -61,19 +64,23 @@ hr.light {
 .text-bold {
     font-weight: bold;
 }
+
 .cs__btn {
     display: block;
     width: 100%;
     margin-bottom: 0;
 }
+
 .cs__btn-primary {
     background-color: var(--primary-color);
     color: white;
 }
+
 .cs__btn-primary:hover {
     color: white;
     opacity: 0.8;
 }
+
 .action-row {
     bottom: 0;
     position: fixed;
@@ -94,20 +101,24 @@ hr.light {
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .topbar-inner {
     display: flex;
     align-items: center;
 }
+
 .topbar-inner .navigation-btn {
     padding: 0;
     margin-right: 15px;
     border: none;
     margin-bottom: 0;
 }
+
 .topbar-inner .navigation-btn svg {
     width: 40px;
     height: 40px;
 }
+
 .exit {
     width: 100%;
     position: absolute;
@@ -136,20 +147,23 @@ hr.light {
     margin: auto;
     padding: 50px 0;
 }
+
 .programme-content__head {
     text-align: center;
     margin-bottom: 35px;
-    padding-left: 40px;
 }
+
 .programme-content__head .title {
     margin-bottom: 10px;
     color: #000;
 }
+
 .programme-content__head .subtitle {
     font-size: 21px;
     margin-bottom: 0;
     color: var(--dark-gray);
 }
+
 .acc {
     margin: 0 auto;
     max-width: 800px;
@@ -157,48 +171,61 @@ hr.light {
     position: relative;
 }
 
-.acc__card {
+.programme-accordion .card {
     margin-bottom: 12px;
     position: relative;
     border: solid 1px var(--gray);
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
 }
+.programme-accordion .card .card-header {
+    padding: 0px;
+    border: none;
+}
 
-.acc__card:before {
+.programme-accordion .card:before {
     content: "";
     position: absolute;
-    left: -36px;
+    left: -35px;
     top: 75px;
     bottom: 0;
     height: calc(100% + 12px);
     margin: auto;
     width: 3px;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
-.acc__card.completed:before {
+
+.programme-accordion .card.completed:before {
     background-color: var(--primary-color);
 }
-.acc__card:last-child::before {
+
+.programme-accordion .card:last-child::before {
     display: none;
 }
-.acc__title {
+
+.programme-accordion .card .btn {
     background: white;
     color: var(--primary-dark);
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 1em 1.5em;
+    padding: 1.5em 1.5em;
+    font-size: 14px;
     position: relative;
     text-align: left;
     border-radius: 5px 5px;
+    width: 100%;
+    margin-bottom: 0px;
+    text-decoration: none;
 }
-.acc__title svg {
+
+.programme-accordion .card .btn svg {
     width: 20px;
     margin-right: 10px;
     fill: var(--primary-dark);
 }
-.acc__title:before {
+
+.programme-accordion .card .btn:before {
     position: absolute;
     content: "";
     left: -42px;
@@ -210,10 +237,11 @@ hr.light {
     border: solid 3px var(--gray);
 }
 
-.acc__title.active:before {
+.programme-accordion .card .btn.active:before {
     border-color: var(--primary-color);
 }
-.acc__title::after {
+
+.programme-accordion .card .btn::after {
     width: 8px;
     height: 8px;
     border-right: 2px solid var(--primary-dark);
@@ -226,15 +254,17 @@ hr.light {
     transition: all 0.2s ease-in-out;
 }
 
-.acc__title.active::after {
+.programme-accordion .card .btn.active::after {
     transform: rotate(45deg);
     transition: all 0.2s ease-in-out;
 }
-.acc__card.completed .acc__title:before {
+
+.programme-accordion .card.completed .btn:before {
     border-color: var(--primary-color);
     background-color: var(--primary-color);
 }
-.acc__panel {
+
+.programme-accordion .card .card-body {
     background: white;
     color: black;
     display: none;
@@ -244,15 +274,18 @@ hr.light {
     border-top: solid 1px var(--gray);
     border-radius: 0 0 5px 5px;
 }
-.acc__panel p {
+
+.programme-accordion .card .card-body p {
     margin-bottom: 16px;
 }
-.acc__panel ul {
+
+.programme-accordion .card .card-body ul {
     padding-left: 0px;
     margin-bottom: 20px;
     list-style-type: disc;
 }
-.acc__panel ul li {
+
+.programme-accordion .card .card-body ul li {
     margin-bottom: 0px;
 }
 /*Programme Page CSS End*/
@@ -267,33 +300,41 @@ hr.light {
         width: 100%;
     }
 }
+
 @media (max-width: 767px) {
     .topbar-inner h4 {
         font-size: 22px;
     }
+
     .topbar-inner .navigation-btn {
         margin-right: 10px;
     }
+
     #page-title {
         margin-left: 15px;
     }
+
     .programme-content__head .title {
         font-size: 26px;
     }
+
     .programme-content__head .subtitle {
         font-size: 16px
     }
+
     .programme-content__head {
         padding-left: 0px;
     }
 }
+
 @media (max-width: 360px) {
-    
+
 
     .topbar-inner h4 {
         font-size: 18px;
         margin-bottom: 0px;
     }
+
     .action-row .row {
         padding-left: 0px;
     }

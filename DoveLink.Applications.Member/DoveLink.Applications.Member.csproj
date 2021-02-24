@@ -20,4 +20,8 @@
     <ProjectReference Include="..\DoveLink.Applications.Extensions\DoveLink.Applications.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Content\NewFolder\" />
+  </ItemGroup>
+
 </Project>
