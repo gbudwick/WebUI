@@ -98,9 +98,11 @@ namespace DoveLink.Applications.Member.Context
 
             foreach (var entity in entities)
             {
-                if (entity.State == EntityState.Added) ((BaseEntity)entity.Entity).CreatedDate = DateTime.UtcNow;
-
-                ((BaseEntity)entity.Entity).ModifiedDate = DateTime.UtcNow;
+                if (entity.State == EntityState.Added)
+                {
+                    ((BaseEntity)entity.Entity).CreatedDate = DateTime.UtcNow;
+                }
+                ((BaseEntity)entity.Entity).DateModifed = DateTime.UtcNow;
             }
         }
     }

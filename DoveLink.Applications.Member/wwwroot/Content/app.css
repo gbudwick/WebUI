@@ -1,4 +1,5 @@
-﻿html, body {
+﻿
+html, body {
     height: 100%;
 }
 
@@ -7,14 +8,16 @@
     padding: 0;
     margin: 0;
 }
+
 :after, :before {
     box-sizing: border-box;
 }
+
 #main {
     position: relative;
     top: 0px;
-    
 }
+
 .sidebar-container ~ #main {
     margin-left: 400px;
     padding-left: 25px;
@@ -61,19 +64,39 @@ hr.light {
 .text-bold {
     font-weight: bold;
 }
+
 .cs__btn {
     display: block;
     width: 100%;
     margin-bottom: 0;
+    height: 38px;
+    padding: 0 30px;
+    color: #555;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box;
 }
+
 .cs__btn-primary {
     background-color: var(--primary-color);
     color: white;
 }
-.cs__btn-primary:hover {
-    color: white;
-    opacity: 0.8;
-}
+
+    .cs__btn-primary:hover {
+        color: white;
+        opacity: 0.8;
+    }
+
 .action-row {
     bottom: 0;
     position: fixed;
@@ -84,30 +107,34 @@ hr.light {
     left: 300px;
 }
 
-.action-row .row {
-    max-width: 960px;
-    margin: auto;
-    padding-left: 100px;
-}
+    .action-row .row {
+        max-width: 960px;
+        margin: auto;
+        padding-left: 100px;
+    }
 
 .button.u-pull-right {
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .topbar-inner {
     display: flex;
     align-items: center;
 }
-.topbar-inner .navigation-btn {
-    padding: 0;
-    margin-right: 15px;
-    border: none;
-    margin-bottom: 0;
-}
-.topbar-inner .navigation-btn svg {
-    width: 40px;
-    height: 40px;
-}
+
+    .topbar-inner .navigation-btn {
+        padding: 0;
+        margin-right: 15px;
+        border: none;
+        margin-bottom: 0;
+    }
+
+        .topbar-inner .navigation-btn svg {
+            width: 40px;
+            height: 40px;
+        }
+
 .exit {
     width: 100%;
     position: absolute;
@@ -123,33 +150,45 @@ hr.light {
     position: relative;
 }
 
-.show-hide-eye i.fa {
-    position: absolute;
-    right: 20px;
-    bottom: 53px;
-    cursor: pointer;
-}
+    .show-hide-eye i.fa {
+        position: absolute;
+        right: 20px;
+        bottom: 53px;
+        cursor: pointer;
+    }
 
 /*Programme Page CSS Start*/
+body {
+    font-size: 14px;
+}
+
+.btn {
+    padding: 6px 20px;
+    font-size: 14px;
+}
+
 .programme-content {
     max-width: 550px;
     margin: auto;
     padding: 50px 0;
 }
+
 .programme-content__head {
     text-align: center;
     margin-bottom: 35px;
-    padding-left: 40px;
 }
-.programme-content__head .title {
-    margin-bottom: 10px;
-    color: #000;
-}
-.programme-content__head .subtitle {
-    font-size: 21px;
-    margin-bottom: 0;
-    color: var(--dark-gray);
-}
+
+    .programme-content__head .title {
+        margin-bottom: 10px;
+        color: #000;
+    }
+
+    .programme-content__head .subtitle {
+        font-size: 21px;
+        margin-bottom: 0;
+        color: var(--dark-gray);
+    }
+
 .acc {
     margin: 0 auto;
     max-width: 800px;
@@ -157,7 +196,7 @@ hr.light {
     position: relative;
 }
 
-.acc__card {
+.programme-accordion .accordion-item {
     margin-bottom: 12px;
     position: relative;
     border: solid 1px var(--gray);
@@ -165,97 +204,165 @@ hr.light {
     border-radius: 5px;
 }
 
-.acc__card:before {
-    content: "";
-    position: absolute;
-    left: -36px;
-    top: 75px;
-    bottom: 0;
-    height: calc(100% + 12px);
-    margin: auto;
-    width: 3px;
-    background-color: var(--light-gray);
+    .programme-accordion .accordion-item .card-header {
+        padding: 0px;
+        border: none;
+    }
+
+    .programme-accordion .accordion-item:before {
+        content: "";
+        position: absolute;
+        left: -34px;
+        top: 68px;
+        bottom: 0;
+        height: calc(100% + 12px);
+        margin: auto;
+        width: 2px;
+        background-color: var(--gray);
+    }
+
+    .programme-accordion .accordion-item.completed:before {
+        background-color: var(--success-color);
+    }
+
+    .programme-accordion .accordion-item:last-child::before {
+        display: none;
+    }
+
+    .programme-accordion .accordion-item .accordion-button {
+        background: white;
+        color: var(--primary-dark);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 14px;
+        position: relative;
+        text-align: left;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 0px;
+        text-decoration: none;
+        border: none;
+        font-weight: 500;
+        height: auto;
+        transition: all ease-in-out 0.3s;
+    }
+
+        .programme-accordion .accordion-item .accordion-button:after {
+            transition: all ease-in-out 0.3s;
+        }
+
+        .programme-accordion .accordion-item .accordion-button i {
+            width: 16px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .programme-accordion .accordion-item .accordion-button:before {
+            position: absolute;
+            content: "";
+            left: -40px;
+            top: 15px;
+            width: 14px;
+            height: 14px;
+            border-radius: 10px;
+            background-color: white;
+            border: solid 2px var(--gray);
+        }
+
+        .programme-accordion .accordion-item .accordion-button[aria-expanded="true"]:before {
+            border-color: var(--success-color);
+        }
+
+    .programme-accordion .accordion-item.completed .accordion-button:before {
+        border-color: var(--success-color);
+        background-color: var(--success-color);
+    }
+
+    .programme-accordion .accordion-item .accordion-collapse {
+        border: none;
+        border-top: solid 1px var(--gray);
+        border-radius: 0 0 5px 5px;
+        transition: all ease-in-out 0.3s;
+    }
+
+    .programme-accordion .accordion-item .accordion-body {
+        color: black;
+        margin: 0;
+        padding: 15px 20px 20px;
+        text-align: left;
+    }
+
+        .programme-accordion .accordion-item .accordion-body p {
+            margin-bottom: 16px;
+        }
+
+        .programme-accordion .accordion-item .accordion-body ul {
+            padding-left: 0px;
+            margin-bottom: 20px;
+            list-style-type: disc;
+        }
+
+            .programme-accordion .accordion-item .accordion-body ul li {
+                margin-bottom: 0px;
+            }
+/*Programme Page CSS End*/
+.form-group {
+    margin-bottom: 1rem;
 }
-.acc__card.completed:before {
-    background-color: var(--primary-color);
-}
-.acc__card:last-child::before {
-    display: none;
-}
-.acc__title {
-    background: white;
-    color: var(--primary-dark);
-    cursor: pointer;
+
+.member-card .card-header {
     display: flex;
     align-items: center;
-    padding: 1em 1.5em;
-    position: relative;
-    text-align: left;
-    border-radius: 5px 5px;
-}
-.acc__title svg {
-    width: 20px;
-    margin-right: 10px;
-    fill: var(--primary-dark);
-}
-.acc__title:before {
-    position: absolute;
-    content: "";
-    left: -42px;
-    top: 20px;
-    width: 15px;
-    height: 15px;
-    border-radius: 10px;
-    background-color: white;
-    border: solid 3px var(--gray);
+    padding: 8px 10px;
 }
 
-.acc__title.active:before {
-    border-color: var(--primary-color);
-}
-.acc__title::after {
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--primary-dark);
-    border-bottom: 2px solid var(--primary-dark);
-    position: absolute;
-    right: 20px;
-    content: " ";
-    top: calc(50% - 4px);
-    transform: rotate(-45deg);
-    transition: all 0.2s ease-in-out;
+    .member-card .card-header .card-title {
+        margin-bottom: 0px;
+    }
+
+    .member-card .card-header .link {
+        margin-left: auto;
+    }
+
+.member-summary__wrapper {
+    padding: 4rem 0;
 }
 
-.acc__title.active::after {
-    transform: rotate(45deg);
-    transition: all 0.2s ease-in-out;
+.member-list {
+    margin-bottom: 25px;
 }
-.acc__card.completed .acc__title:before {
-    border-color: var(--primary-color);
-    background-color: var(--primary-color);
+
+.member-detail__item label {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
 }
-.acc__panel {
-    background: white;
-    color: black;
-    display: none;
-    margin: 0;
-    padding: 15px 20px 20px;
-    text-align: left;
-    border-top: solid 1px var(--gray);
-    border-radius: 0 0 5px 5px;
+
+.member-detail__item a {
+    color: #77CE64;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding-left: 50px;
 }
-.acc__panel p {
-    margin-bottom: 16px;
+
+.jumbotron {
+    background-color: #A7D9DD;
+    border-radius: .3rem;
+    padding: 4rem 2rem;
+    color: #1C3657;
 }
-.acc__panel ul {
-    padding-left: 0px;
-    margin-bottom: 20px;
-    list-style-type: disc;
-}
-.acc__panel ul li {
-    margin-bottom: 0px;
-}
-/*Programme Page CSS End*/
+
+    .jumbotron i {
+        font-size: 45px;
+    }
+
+    .jumbotron h1 {
+        font-weight: 600;
+        margin-bottom: 0px;
+    }
 
 @media (max-width: 1199px) {
     #topbar {
@@ -267,34 +374,46 @@ hr.light {
         width: 100%;
     }
 }
+
 @media (max-width: 767px) {
     .topbar-inner h4 {
         font-size: 22px;
     }
+
     .topbar-inner .navigation-btn {
         margin-right: 10px;
     }
+
     #page-title {
         margin-left: 15px;
     }
+
     .programme-content__head .title {
         font-size: 26px;
     }
+
     .programme-content__head .subtitle {
         font-size: 16px
     }
+
     .programme-content__head {
         padding-left: 0px;
     }
 }
+
 @media (max-width: 360px) {
-    
+
 
     .topbar-inner h4 {
         font-size: 18px;
         margin-bottom: 0px;
     }
+
     .action-row .row {
         padding-left: 0px;
     }
+}
+
+.card-border-bottom {
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }

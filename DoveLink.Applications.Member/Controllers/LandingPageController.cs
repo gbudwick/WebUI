@@ -13,5 +13,10 @@ namespace DoveLink.Applications.Member.Controllers
         {
             return View();
         }
+
+        public IActionResult AccountMemberSummary()
+        {
+            return View();
+        }
     }
 }

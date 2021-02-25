@@ -9,31 +9,22 @@ using System.Threading.Tasks;
 namespace DoveLink.Applications.Member.Models
 {
     [Table("Members")]
-    public class Member
+    public class Member : BaseEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
-        [MaxLength(50)]
-        [Required]
-        public Guid PublicId { get; set; }
+        public int ApplicationId { get; set; }
 
         [MaxLength(10)]
         public string Title { get; set; }
 
         [MaxLength(50)]
-        [Required]
         public string FirstName { get; set; }
 
         [MaxLength(50)]
         public string MiddleName { get; set; }
 
         [MaxLength(50)]
-        [Required]
         public string LastName { get; set; }
 
-        [Required]
         public DateTime DateOfBirth { get; set; }
 
         [MaxLength(75)]
@@ -42,7 +33,6 @@ namespace DoveLink.Applications.Member.Models
         [MaxLength(13)]
         public string HomePhone { get; set; }
 
-        [Required]
         public bool HomePhoneIsListed { get; set; }
 
         [MaxLength(13)]
@@ -51,10 +41,8 @@ namespace DoveLink.Applications.Member.Models
         [MaxLength(13)]
         public string WorkPhone { get; set; }
 
-        [Required]
         public bool IsPrimaryAccountHolder { get; set; }
 
-        [Required]
         [DefaultValue(0)]
         public int PrimaryMemberId { get; set; }
 
