@@ -6,130 +6,130 @@
 }
 
 
-    <div class="programme-content">
-        <div class="programme-content__head">
-            <h3 class="title">Let's pick up where you left off</h3>
-            <p class="subtitle">Remember, an expert can help alog the way</p>
+<div class="programme-content">
+    <div class="programme-content__head">
+        <h3 class="title">Let's pick up where you left off</h3>
+        <p class="subtitle">Remember, an expert can help alog the way</p>
+    </div>
+    <div class="accordion programme-accordion" id="accordionExample">
+        <div class="accordion-item">
+            <div class="accordion-header" id="account_holding_head">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#account_holding" aria-expanded="true" aria-controls="account_holding">
+                    <i class="fal fa-users"></i> Account Holding
+                </button>
+            </div>
+
+            <div id="account_holding" class="accordion-collapse collapse show" aria-labelledby="account_holding_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>You were just working on your personal info. Let's keep going!</p>
+                    <a href="/LandingPage/AccountMemberSummary" class="cs__btn cs__btn-primary acc__btn">Continue</a>
+                </div>
+            </div>
         </div>
-        <div class="accordion programme-accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="account_holding_head">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#account_holding" aria-expanded="true" aria-controls="account_holding">
-                        <i class="fal fa-users"></i> Account Holding
-                    </button>
+        <div class="accordion-item">
+            <div class="accordion-header" id="mailing_address_head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mailing_address" aria-expanded="false" aria-controls="mailing_address">
+                    <i class="fal fa-mailbox"></i> Mailing Address
+                </button>
+            </div>
+            <div id="mailing_address" class="accordion-collapse collapse" aria-labelledby="mailing_address_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>You'have already working on this section. Let us known if you want to review your info or make any changes.</p>
+                    <ul>
+                        <li>Donation and Charity </li>
+                        <li>Car Registration Fees</li>
+                    </ul>
+                    <button type="button" class="cs__btn cs__btn-primary acc__btn" data-bs-toggle="collapse" data-bs-target="#account_type">Review/Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" id="account_type_head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#account_type" aria-expanded="false" aria-controls="account_type">
+                    <i class="fal fa-badge-dollar"></i> Account Type
+                </button>
+            </div>
+            <div id="account_type" class="accordion-collapse collapse" aria-labelledby="account_type_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>You'have already working on this section. Let us known if you want to review your info or make any changes.</p>
+                    <ul>
+                        <li>Donation and Charity </li>
+                        <li>Car Registration Fees</li>
+                    </ul>
+                    <button type="button" class="cs__btn cs__btn-primary acc__btn" data-bs-toggle="collapse" data-bs-target="#account_services">Review/Edit</button>
                 </div>
 
-                <div id="account_holding" class="collapse show" aria-labelledby="account_holding_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>You were just working on your personal info. Let's keep going!</p>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Continue</button>
-                    </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" id="account_services_head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#account_services" aria-expanded="false" aria-controls="account_services">
+                    <i class="fal fa-clipboard-list-check"></i> Account Services
+                </button>
+            </div>
+            <div id="account_services" class="accordion-collapse collapse" aria-labelledby="account_services_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>I am the content found under accordion #4.</p>
+                    <p>You can't see me while "active" is not present.</p>
+                    <button type="button" class="cs__btn cs__btn-primary acc__btn" data-bs-toggle="collapse" data-bs-target="#beneficiaries">Continue</button>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="mailing_address_head">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#mailing_address" aria-expanded="false" aria-controls="mailing_address">
-                        <i class="fal fa-mailbox"></i> Mailing Address
-                    </button>
-                </div>
-                <div id="mailing_address" class="collapse" aria-labelledby="mailing_address_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>You'have already working on this section. Let us known if you want to review your info or make any changes.</p>
-                        <ul>
-                            <li>Donation and Charity </li>
-                            <li>Car Registration Fees</li>
-                        </ul>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Review/Edit</button>
-                    </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" id="beneficiaries_head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#beneficiaries" aria-expanded="false" aria-controls="beneficiaries">
+                    <i class="fal fa-handshake"></i> Beneficiaries
+                </button>
+            </div>
+            <div id="beneficiaries" class="accordion-collapse collapse" aria-labelledby="beneficiaries_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>I am the content found under accordion #4.</p>
+                    <p>You can't see me while "active" is not present.</p>
+                    <button type="button" class="cs__btn cs__btn-primary acc__btn" data-bs-toggle="collapse" data-bs-target="#utma_designation">Continue</button>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="account_type_head">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#account_type" aria-expanded="false" aria-controls="account_type">
-                        <i class="fal fa-badge-dollar"></i> Account Type
-                    </button>
-                </div>
-                <div id="account_type" class="collapse" aria-labelledby="account_type_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>You'have already working on this section. Let us known if you want to review your info or make any changes.</p>
-                        <ul>
-                            <li>Donation and Charity </li>
-                            <li>Car Registration Fees</li>
-                        </ul>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Review/Edit</button>
-                    </div>
-
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" id="utma_designation_head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#utma_designation" aria-expanded="false" aria-controls="utma_designation">
+                    <i class="fal fa-child"></i> UTMA Designation
+                </button>
+            </div>
+            <div id="utma_designation" class="accordion-collapse collapse" aria-labelledby="utma_designation_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>I am the content found under accordion #4.</p>
+                    <p>You can't see me while "active" is not present.</p>
+                    <button type="button" class="cs__btn cs__btn-primary acc__btn" data-bs-toggle="collapse" data-bs-target="#certification">Continue</button>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="account_services_head">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#account_services" aria-expanded="false" aria-controls="account_services">
-                        <i class="fal fa-clipboard-list-check"></i> Account Services
-                    </button>
-                </div>
-                <div id="account_services" class="collapse" aria-labelledby="account_services_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>I am the content found under accordion #4.</p>
-                        <p>You can't see me while "active" is not present.</p>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Continue</button>
-                    </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" id="certification_head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#certification" aria-expanded="false" aria-controls="certification">
+                    <i class="fal fa-medal"></i> Certification
+                </button>
+            </div>
+            <div id="certification" class="accordion-collapse collapse" aria-labelledby="certification_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>I am the content found under accordion #4.</p>
+                    <p>You can't see me while "active" is not present.</p>
+                    <button type="button" class="cs__btn cs__btn-primary acc__btn" data-bs-toggle="collapse" data-bs-target="#review_submit">Finish</button>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="beneficiaries_head">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#beneficiaries" aria-expanded="false" aria-controls="beneficiaries">
-                        <i class="fal fa-handshake"></i> Beneficiaries
-                    </button>
-                </div>
-                <div id="beneficiaries" class="collapse" aria-labelledby="beneficiaries_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>I am the content found under accordion #4.</p>
-                        <p>You can't see me while "active" is not present.</p>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Continue</button>
-                    </div>
-                </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" id="review_submit_head">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#review_submit" aria-expanded="false" aria-controls="review_submit">
+                    <i class="fal fa-flag-checkered"></i> Review and Submit
+                </button>
             </div>
-            <div class="card">
-                <div class="card-header" id="utma_designation_head">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#utma_designation" aria-expanded="false" aria-controls="utma_designation">
-                        <i class="fal fa-child"></i> UTMA Designation
-                    </button>
-                </div>
-                <div id="utma_designation" class="collapse" aria-labelledby="utma_designation_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>I am the content found under accordion #4.</p>
-                        <p>You can't see me while "active" is not present.</p>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Continue</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="certification_head">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#certification" aria-expanded="false" aria-controls="certification">
-                        <i class="fal fa-medal"></i> Certification
-                    </button>
-                </div>
-                <div id="certification" class="collapse" aria-labelledby="certification_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>I am the content found under accordion #4.</p>
-                        <p>You can't see me while "active" is not present.</p>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Finish</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="review_submit_head">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#review_submit" aria-expanded="false" aria-controls="review_submit">
-                        <i class="fal fa-flag-checkered"></i> Review and Submit
-                    </button>
-                </div>
-                <div id="review_submit" class="collapse" aria-labelledby="review_submit_head" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>I am the content found under accordion #4.</p>
-                        <p>You can't see me while "active" is not present.</p>
-                        <button type="button" class="cs__btn cs__btn-primary acc__btn">Finish</button>
-                    </div>
+            <div id="review_submit" class="accordion-collapse collapse" aria-labelledby="review_submit_head" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>I am the content found under accordion #4.</p>
+                    <p>You can't see me while "active" is not present.</p>
+                    <button type="button" class="cs__btn cs__btn-primary acc__btn">Finish</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
