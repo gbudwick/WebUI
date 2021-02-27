@@ -70,7 +70,7 @@ hr.light {
     width: 100%;
     margin-bottom: 0;
     height: 38px;
-    padding: 0 30px;
+    padding: 0 22px;
     color: #555;
     text-align: center;
     font-size: 11px;
@@ -170,7 +170,7 @@ body {
 .programme-content {
     max-width: 550px;
     margin: auto;
-    padding: 50px 0;
+    padding: 50px;
 }
 
 .programme-content__head {
@@ -340,14 +340,6 @@ body {
     display: block;
 }
 
-.member-detail__item a {
-    color: #77CE64;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    padding-left: 50px;
-}
-
 .jumbotron {
     background-color: #A7D9DD;
     border-radius: .3rem;
@@ -417,3 +409,40 @@ body {
 .card-border-bottom {
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
+
+.verified {
+    color: darkgreen;
+}
+
+.member-detail__item a {
+    color: #77CE64;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    /*padding-left: 50px;*/
+}
+
+.form-container {
+    padding: 25px;
+}
+
+input[type="datetime-local"] {
+    height: 38px;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+input[type="datetime-local"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+    input[type="datetime-local"]:focus {
+        border: 1px solid var(--primary-color);
+        outline: 0;
+    }

@@ -27,8 +27,10 @@ namespace DoveLink.Applications.Member.Models
         [MaxLength(9)]
         public string ZipCode { get; set; }
 
-        public int AddressType { get; set; }
+        public int? AddressType { get; set; }
 
-        public bool IsMailingAddress { get; set; }
+        public bool? IsMailingAddress { get; set; }
+
+        public AddressType AddressTypeDetail { get; set; }
     }
 }

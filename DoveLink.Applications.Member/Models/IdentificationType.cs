@@ -11,6 +11,6 @@ namespace DoveLink.Applications.Member.Models
         [MaxLength(50)]
         public string Name { get; set; }
 
-        public bool Hidden { get; set; }
+        public bool? Hidden { get; set; }
     }
 }

@@ -12,18 +12,19 @@
         applicationType = (ApplicationType)Enum.Parse(typeof(ApplicationType), appType, true);
     }
 
-    switch (applicationType)
-    {
-        case ApplicationType.Member:
-            Layout = "~/Views/Shared/_MembershipLayout.cshtml";
-            break;
-        default:
-            Layout = "~/Views/Shared/_HomeEquityLayout.cshtml";
-            break;
-    }
+    //switch (applicationType)
+    //{
+    //    case ApplicationType.Member:
+    //        Layout = "~/Views/Shared/_MembershipLayout.cshtml";
+    //        break;
+    //    default:
+    //        Layout = "~/Views/Shared/_HomeEquityLayout.cshtml";
+    //        break;
+    //}
 
-    if (Html.CurrentController() == "LandingPage")
-    {
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+    //if (Html.CurrentController() == "LandingPage")
+    //{
+    //    Layout = "~/Views/Shared/_Layout.cshtml";
+    //}
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }

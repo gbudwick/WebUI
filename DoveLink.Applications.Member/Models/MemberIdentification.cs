@@ -12,7 +12,7 @@ namespace DoveLink.Applications.Member.Models
     {
         public int MemberId { get; set; }
 
-        public int IdentificationTypeId { get; set; }
+        public int? IdentificationTypeId { get; set; }
 
         [MaxLength(50)]
         public string Description { get; set; }
@@ -20,8 +20,8 @@ namespace DoveLink.Applications.Member.Models
         [MaxLength(50)]
         public string Number { get; set; }
 
-        public DateTime IssueDate { get; set; }
+        public DateTime? IssueDate { get; set; }
 
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
     }
 }

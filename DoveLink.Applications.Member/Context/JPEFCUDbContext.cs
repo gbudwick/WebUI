@@ -17,6 +17,18 @@ namespace DoveLink.Applications.Member.Context
         {
         }
 
+        public DbSet<Address> Addresses { get; set; }
+
+        public DbSet<AddressType> AddressTypes { get; set; }
+
+        public DbSet<Application> Applications { get; set; }
+
+        public DbSet<IdentificationType> IdentificationTypes { get; set; }
+
+        public DbSet<DoveLink.Applications.Member.Models.Member> Members { get; set; }
+
+        public DbSet<MemberIdentification> MemberIdentifications { get; set; }
+
         public override int SaveChanges()
         {
             AddTimestamps();

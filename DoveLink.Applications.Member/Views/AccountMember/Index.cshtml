@@ -1,0 +1,141 @@
+﻿@model IEnumerable<DoveLink.Applications.Member.Models.Member>;
+<div class="member-summary__wrapper">
+    <div class="container">
+        <div class="jumbotron mb-5">
+            <div class="text-center">
+                <i class="fad fa-users"></i>
+                <h1 class="display-4">Account Member summary</h1>
+            </div>
+        </div>
+        <div class="member-list">
+            <div class="card member-card mb-3">
+                @if (Model.Count() > 0)
+                {
+                    @foreach (var row in Model)
+                    {
+                        <div class="card-body card-border-bottom">
+                            <div class="member-detail row">
+                                <div class="member-detail__item col col-12 col-sm-12 col-md-12">
+                                    <label>
+                                        <span>@row.Title</span>&nbsp;
+                                        <span>@row.FirstName</span>&nbsp;
+                                        <span>@row.MiddleName</span>&nbsp;
+                                        <span>@row.LastName</span>
+                                    </label>
+                                </div>
+                                @if (row.IsPrimaryAccountHolder == true)
+                                {
+                                    <i class="fad fa-badge-check verified"></i>
+                                }
+                            </div>
+                            <div class="member-detail row">
+                                <div class="member-detail__item col col-11 col-sm-12 col-md-11">
+                                    <div class="row">
+                                        <div class="col col-12 col-sm-6 col-md-3">
+                                            <label>Address</label>
+                                            @if (row.Address != null)
+                                            {
+                                                <address>
+                                                    @if (@row.Address.AddressTypeDetail?.Hidden == false)
+                                                    {
+                                                        @row.Address.AddressTypeDetail.Name<br />
+                                                    }
+                                                    @(row.Address.Address1.Length > 0 ? row.Address.Address1 : "")
+                                                    @if (row.Address.Address1.Length > 0)
+                                                    {
+                                                        <br />
+                                                    }
+                                                    @(row.Address.Address2.Length > 0 ? row.Address.Address2 : "")
+                                                    @if (row.Address.Address2.Length > 0)
+                                                    {
+                                                        <br />
+                                                    }
+                                                    @(row.Address.City.Length > 0 ? row.Address.City : "") &nbsp;
+                                                    @(row.Address.State.Length > 0 ? row.Address.State : "")&nbsp;
+                                                    @(row.Address.ZipCode.Length > 0 ? " ("+row.Address.ZipCode+")" : "")
+                                                </address>
+                                                <label>Is Mailing Address</label>
+                                                <p>@(row.Address.IsMailingAddress == true ? "Yes" : "No")</p>
+                                            }
+                                            else
+                                            {
+                                                <address>-</address>
+                                            }
+                                        </div>
+                                        <div class="member-detail__item col col-12 col-sm-6 col-md-3">
+                                            <label>Birthdate</label>
+                                            @if (row.DateOfBirth.HasValue & row.DateOfBirth.Value.Date.ToString() != "01/01/0001")
+                                            {
+                                                <p>@row.DateOfBirth.Value.ToString("dd/MMM/yyyy")</p>
+                                            }
+                                            else
+                                            {
+                                                <p>-</p>
+                                            }
+                                            <br />
+                                            <label>Email</label>
+                                            <p>@(!string.IsNullOrEmpty(row.Email) ? row.Email:"")</p>
+                                        </div>
+                                        <div class="col col-12 col-sm-6 col-md-3">
+                                            <label>Employer</label>
+                                            <p>@(!string.IsNullOrEmpty(row.Employer) ? @row.Employer : "-")</p>
+                                        </div>
+                                        <div class="col col-12 col-sm-6 col-md-2">
+                                            <label>Mothers MaidenName</label>
+                                            <p>@(!string.IsNullOrEmpty(row.MothersMaidenName) ? @row.MothersMaidenName : "-")</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-12 col-sm-6 col-md-3">
+                                            <label>Home Phone</label>
+                                            <p>@(!string.IsNullOrEmpty(row.HomePhone) ? @row.HomePhone : "-")</p>
+                                        </div>
+                                        <div class="col col-12 col-sm-6 col-md-3">
+                                            <label>Cell Phone</label>
+                                            <p>@(!string.IsNullOrEmpty(row.CellPhone) ? @row.CellPhone : "-")</p>
+                                        </div>
+                                        <div class="col col-12 col-sm-6 col-md-3">
+                                            <label>Work Phone</label>
+                                            <p>@(!string.IsNullOrEmpty(row.WorkPhone) ? @row.WorkPhone : "-")</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="member-detail__item col col-1 col-sm-12 col-md-1 float-end">
+                                    <a href="javascript:;" class="link link-primary" data-bs-toggle="modal" data-bs-target="#memeber_edit">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="card-body text-bold text-center">
+                        <div class="member-detail row">
+                            <div class="member-detail__item col col-12 col-sm-12 col-md-12">
+                                No Member added.
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="row float-md-end float-sm-none">
+            <div class="col col-3">
+                <a href="/LandingPage" class="cs__btn cs__btn-primary acc__btn">Back</a>
+            </div>
+            <div class="col col-9">
+                <a href="/AccountMember/AddMembers" class="cs__btn cs__btn-primary acc__btn">
+                    @if (Model.Any(m => m.IsPrimaryAccountHolder == true) == false)
+                    {
+                        <text>Add primary account holder</text>
+                    }
+                    else
+                    {
+                        <text>Add joint account holder</text>
+                    }
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</div>

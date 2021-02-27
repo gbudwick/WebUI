@@ -1,12 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-
-}
-
-
-<div class="programme-content">
+﻿<div class="programme-content">
     <div class="programme-content__head">
         <h3 class="title">Let's pick up where you left off</h3>
         <p class="subtitle">Remember, an expert can help alog the way</p>
@@ -22,7 +14,7 @@
             <div id="account_holding" class="accordion-collapse collapse show" aria-labelledby="account_holding_head" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <p>You were just working on your personal info. Let's keep going!</p>
-                    <a href="/LandingPage/AccountMemberSummary" class="cs__btn cs__btn-primary acc__btn">Continue</a>
+                    <a href="/AccountMember/index" class="cs__btn cs__btn-primary acc__btn">@ViewBag.ButtonText</a>
                 </div>
             </div>
         </div>

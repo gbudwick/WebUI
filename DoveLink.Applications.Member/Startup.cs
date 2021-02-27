@@ -28,7 +28,7 @@ namespace DoveLink.Applications.Member
         {
             services.AddHttpContextAccessor();
             services.AddSession(s => s.IdleTimeout = TimeSpan.FromMinutes(30));
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddDbContext<JPEFCUDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("JPEFCUConnection")));
             services.AddMvc();
