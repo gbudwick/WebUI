@@ -1,5 +1,11 @@
 ﻿@model DoveLink.Applications.Member.Models.Member;
 <div class="form-container">
+    <div class="jumbotron mb-5">
+        <div class="text-center">
+            <i class="fas fa-user-edit"></i>
+            <h1 class="display-4">Add Account Member Details</h1>
+        </div>
+    </div>
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-2">
             @Html.LabelFor(m => m.Title, new { @class = "form-label" })
@@ -43,13 +49,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Username</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Please choose a username.
-                </div>
+            @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "placeholder@example.com" } })
+            <div class="invalid-feedback">
+                Please choose a username.
             </div>
         </div>
         <div class="col-md-6">
@@ -78,9 +81,9 @@
         </div>
         <div class="col-12">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                @Html.CheckBoxFor(m => m.IsPrimaryAccountHolder.Value, new { @class = "form-check-input", @disabled = "disabled" })
                 <label class="form-check-label" for="invalidCheck">
-                    Agree to terms and conditions
+                    Is primary account holder
                 </label>
                 <div class="invalid-feedback">
                     You must agree before submitting.
@@ -116,13 +119,3 @@
 
     </script>
 </div>
-@section Scripts {
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('input[type="datetime-local"]').datetimepicker({
-                dateFormat: "dd/MM/yyyy",
-                timeFormat: "HH:mm"
-            });
-        })
-    </script>
-}

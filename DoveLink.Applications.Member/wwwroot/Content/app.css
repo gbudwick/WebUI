@@ -426,7 +426,8 @@ body {
     padding: 25px;
 }
 
-input[type="datetime-local"] {
+input[type="datetime-local"],
+input[type="date"] {
     height: 38px;
     padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
     background-color: #fff;
@@ -436,7 +437,8 @@ input[type="datetime-local"] {
     box-sizing: border-box;
 }
 
-input[type="datetime-local"] {
+input[type="datetime-local"],
+input[type="date"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -446,3 +448,8 @@ input[type="datetime-local"] {
         border: 1px solid var(--primary-color);
         outline: 0;
     }
+
+
+.form-control, .form-select {
+    font-size: 1.5rem;
+}

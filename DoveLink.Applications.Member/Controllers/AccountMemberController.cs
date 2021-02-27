@@ -25,7 +25,10 @@ namespace DoveLink.Applications.Member.Controllers
 
         public IActionResult AddMembers()
         {
-            return View();
+            var member = new DoveLink.Applications.Member.Models.Member();
+            if (!_db.Members.Any(m => m.IsPrimaryAccountHolder.Value))
+                member.IsPrimaryAccountHolder = true;
+            return View(member);
         }
     }
 }
